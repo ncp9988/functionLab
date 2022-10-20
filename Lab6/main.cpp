@@ -6,6 +6,13 @@
 //
 
 #include <iostream>
+#include <cmath>
+#include <cctype>
+#include <iomanip>
+
+
+
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
