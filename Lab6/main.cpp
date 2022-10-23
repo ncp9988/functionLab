@@ -17,6 +17,8 @@ int Summation ( int num1, int num2);
 double raisePower (double n, int p);
 bool isEven ( int a);
 void ZeroSmall (int& a, int& b, int& c);
+int AddLargest2EvenNumbers ( int x, int y, int z);
+
 
 
 
@@ -41,11 +43,23 @@ int main() {
     cout << a << " is an even number: "<< isEven(a)<< endl;
     
     
+    int x, y, z;
+
+    cout << "Enter 3 number to us ZeroSmall function"<< endl;
+    cin >>  x >> y >> z;
+    ZeroSmall (x,y,z);
+    cout << "After ZeroSmall function is " << x << " "<< y << " " << z<< endl;
     
     
-    int number1 = 9, number2= 10, number3= 2;
-    ZeroSmall ( number1, number2, number3);
-    cout << number1 << " "<< number2 << " " << number3<< endl;
+    
+    
+    
+    cout << "Enter 3 number to use AddLargest2Evennumber function"<< endl;
+    cin >>  x>> y>> z;
+    cout << "After AddLargest2Evennumber is " <<AddLargest2EvenNumbers (x,y,z)<<endl;
+
+
+
 
     
     
@@ -62,10 +76,10 @@ int main() {
 
 // Summation
 int Summation ( int num1, int num2)
-    {
-    int sum;
-        return sum = num1 + num2;
-    }
+{
+    return (num1 + num2);
+}
+    
 
 
 // RaisePower
@@ -84,10 +98,18 @@ double raisePower( double n, int p)
 bool isEven ( int a)
 {
     if (a % 2 == 0)
+    
         return true;
-    return false;
+    else
+    {
+        return false;
+    }
 }
 
+
+
+
+//ZeroSmall
 void ZeroSmall (int& a, int& b, int& c)
 {
     if (a<b && a<c)
@@ -99,7 +121,36 @@ void ZeroSmall (int& a, int& b, int& c)
 }
 
 
+
+
+
+
+//AddLargest2EvenNumbers
 int AddLargest2EvenNumbers ( int x, int y, int z)
 {
-    if ( x = isEven())
+   if( !isEven(x))
+   {
+       x +=1;
+   };
+    if( !isEven(y))
+    {
+        y +=1;
+
+    };
+    if( !isEven(z))
+    {
+        z +=1;
+    };
+    
+    ZeroSmall(x, y, z);
+    
+    if (x<y && x<z)
+        return Summation(y,z);
+    else if (y<z)
+        return  Summation(x,z);
+    else
+        return Summation(x,y);
+    
+
+   
 }
