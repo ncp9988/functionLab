@@ -21,6 +21,8 @@ int AddLargest2EvenNumbers ( int x, int y, int z);
 int LargestDivisor(int a);
 int PowerToTheDivisor (int a);
 int SumOfDigits (int a);
+bool SumOfPrimeDigits(int min,int max, int &sum);
+void DivisibilityTester(int a, int b,int p = 0);
 
 
 
@@ -100,7 +102,19 @@ int main() {
     cin >> a ;
     cout << "SumOfDigits of " << a << " is " << SumOfDigits(a)<< endl;
     cout << " "<< endl;
-
+    
+    
+    
+    
+    
+    cout << "Enter 2 number to use SumOfPrimeDigits function"<< endl;
+    cin >> x >> y ;
+    cout << "SumOfPrimeDigits is a prime or not?":<<  SumOfPrimeDigits(x,y,z)<< endl;
+    cout << " "<< endl;
+    
+    
+    
+   
 
     
     
@@ -251,3 +265,34 @@ int SumOfDigits (int a)
     return sum;
 
 }
+
+
+
+
+bool SumOfPrimeDigits(int min,int max, int &sum)
+{
+    sum = 0;
+    for(int i = min; i<= max;i++){
+        if(LargestDivisor(i)==1)
+        {
+            sum += SumOfDigits(i);
+            
+        }
+        
+    }
+    if(LargestDivisor(sum) == 1){
+        return true;
+        
+    }
+    return false;
+    
+}
+
+
+
+
+
+
+
+
+    
