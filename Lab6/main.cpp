@@ -18,6 +18,8 @@ double raisePower (double n, int p);
 bool isEven ( int a);
 void ZeroSmall (int& a, int& b, int& c);
 int AddLargest2EvenNumbers ( int x, int y, int z);
+int LargestDivisor(int a);
+
 
 
 
@@ -57,6 +59,12 @@ int main() {
     cout << "Enter 3 number to use AddLargest2Evennumber function"<< endl;
     cin >>  x>> y>> z;
     cout << "After AddLargest2Evennumber is " <<AddLargest2EvenNumbers (x,y,z)<<endl;
+    
+    cout << "Enter a number to use LArgestDivisor function"<< endl;
+    cin >> a ;
+    cout << "After LargestDivisor function is " <<     LargestDivisor(a) << endl;
+
+
 
 
 
@@ -128,14 +136,14 @@ void ZeroSmall (int& a, int& b, int& c)
 //AddLargest2EvenNumbers
 int AddLargest2EvenNumbers ( int x, int y, int z)
 {
-   if( !isEven(x))
-   {
-       x +=1;
-   };
+    if( !isEven(x))
+    {
+        x +=1;
+    };
     if( !isEven(y))
     {
         y +=1;
-
+        
     };
     if( !isEven(z))
     {
@@ -150,7 +158,35 @@ int AddLargest2EvenNumbers ( int x, int y, int z)
         return  Summation(x,z);
     else
         return Summation(x,y);
+}
     
 
-   
-}
+    
+    
+    
+    int LargestDivisor(int a)
+{
+        if(a == 1)
+        {
+            return 1;
+        }
+        
+        int max = 1;
+        for(int i=2; i*i<=a ;i++)
+        {
+            if(a%i == 0)
+            {
+                if(i > max)
+                {
+                    max = i;
+                }
+                if(a/i > max)
+                {
+                    max = a/i;
+                }
+            }
+            
+        }
+        return max;
+
+    }
