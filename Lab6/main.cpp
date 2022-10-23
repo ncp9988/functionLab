@@ -99,7 +99,8 @@ int main() {
     cout << "Enter a number to use SumOfDigits function"<< endl;
     cin >> a ;
     cout << "SumOfDigits of " << a << " is " << SumOfDigits(a)<< endl;
-    
+    cout << " "<< endl;
+
 
     
     
