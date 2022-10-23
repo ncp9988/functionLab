@@ -19,6 +19,10 @@ bool isEven ( int a);
 void ZeroSmall (int& a, int& b, int& c);
 int AddLargest2EvenNumbers ( int x, int y, int z);
 int LargestDivisor(int a);
+int PowerToTheDivisor (int a);
+int SumOfDigits (int a);
+
+
 
 
 
@@ -31,27 +35,34 @@ int main() {
     cout << "Enter 2 number to find sum:"<< endl;
     cin >> num1 >> num2;
     cout << "The summation of "<< num1 <<" and "<< num2 << " is " << Summation(num1, num2)<< endl;
+    cout << " "<< endl;
+    
+    
     
     double n;
     int p=2 ;
     cout << "Enter a number to find its square:"<< endl;
     cin >> n;
     cout <<"The square of "<< n << " is "<< raisePower(n , p)<< endl;
+    cout << " "<< endl;
+    
     
     
     int a;
     cout << "Enter a number to find if it is an even number"<< endl;
     cin >> a ;
     cout << a << " is an even number: "<< isEven(a)<< endl;
+    cout << " "<< endl;
+    
     
     
     int x, y, z;
-
     cout << "Enter 3 number to us ZeroSmall function"<< endl;
     cin >>  x >> y >> z;
     ZeroSmall (x,y,z);
     cout << "After ZeroSmall function is " << x << " "<< y << " " << z<< endl;
-    
+    cout << " "<< endl;
+
     
     
     
@@ -59,21 +70,42 @@ int main() {
     cout << "Enter 3 number to use AddLargest2Evennumber function"<< endl;
     cin >>  x>> y>> z;
     cout << "After AddLargest2Evennumber is " <<AddLargest2EvenNumbers (x,y,z)<<endl;
+    cout << " "<< endl;
+
+    
+    
+    
+    
+    
     
     cout << "Enter a number to use LArgestDivisor function"<< endl;
     cin >> a ;
     cout << "After LargestDivisor function is " <<     LargestDivisor(a) << endl;
-
-
-
-
-
+    cout << " "<< endl;
 
     
     
 
 
+
+
+    cout << "Enter a number to use PowertoThePower function"<< endl;
+    cin >> a ;
+    cout << "PowerToThePower of " << a << " is " << PowerToTheDivisor(a)<< endl;
+    cout << " "<< endl;
+
     
+    
+    cout << "Enter a number to use SumOfDigits function"<< endl;
+    cin >> a ;
+    cout << "SumOfDigits of " << a << " is " << SumOfDigits(a)<< endl;
+    cout << " "<< endl;
+    
+
+    
+    
+
+
     
     
     
@@ -190,3 +222,32 @@ int AddLargest2EvenNumbers ( int x, int y, int z)
         return max;
 
     }
+
+
+
+
+
+int PowerToTheDivisor (int a)
+{
+    int result;
+    result = pow(a, LargestDivisor(a));
+    return result;
+    
+}
+
+
+
+
+int SumOfDigits (int a)
+{
+    int sum=0;
+
+    while ( a!= 0)
+    {
+
+        sum += a%10;
+        a = a/10;
+    }
+    return sum;
+
+}
